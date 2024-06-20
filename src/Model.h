@@ -1,35 +1,49 @@
+/**
+ * @file Model.h
+ * @brief Объявление класса Model.
+ */
+
 #ifndef MODEL_H
 #define MODEL_H
 
 #include <opencv2/opencv.hpp>
 #include <iostream>
-
 #include "Image.h"
 
 /**
- * Model class that contains code to read the pretrained tensorflow model and allows
- * us to make predictions on new images
+ * @class Model
+ * @brief Класс Model содержит код для загрузки предобученной модели TensorFlow и позволяет делать предсказания на новых изображениях.
  */
 class Model {
 public:
-    // Constructor reads in a pretrained (in python) tensorflow graph and weights (.pb file contains everything we need about the model)
-    // Also initialises the mapping from class id to the string label (ie. happy, angry, sad etc)  
+    /**
+     * @brief Конструктор загружает предобученную модель TensorFlow и инициализирует отображение ID классов в строковые метки (например, happy, angry, sad и т.д.).
+     * @param model_filename Путь к файлу модели (.pb файл содержит всё необходимое о модели).
+     */
     Model(const std::string& model_filename);
 
-    //Destructor
+    /**
+     * @brief Деструктор класса Model.
+     */
     ~Model() {};
 
-    // Model inference function takes image input and outputs the prediction label and the probability
+    /**
+     * @brief Функция предсказания модели, принимает изображение на вход и возвращает предсказанную метку и вероятность.
+     * @param image Изображение для предсказания.
+     * @return Вектор строк с предсказанными эмоциями и их вероятностями.
+     */
     std::vector<std::string> predict(Image& image);
 
+    /**
+     * @brief Функция предсказания модели, принимает изображение на вход и возвращает первую предсказанную эмоцию.
+     * @param image Изображение для предсказания.
+     * @return Строка с первой предсказанной эмоцией и её вероятностью.
+     */
+    std::string ans(Image& image);
+
 private:
-    // Neural network model
-    cv::dnn::Net network;
-
-    // Mapping of the class id to the string label
-    std::map<int, std::string> classid_to_string;
-
+    cv::dnn::Net network; ///< Нейронная сеть модели.
+    std::map<int, std::string> classid_to_string; ///< Отображение ID класса в строковую метку.
 };
-
 
 #endif
