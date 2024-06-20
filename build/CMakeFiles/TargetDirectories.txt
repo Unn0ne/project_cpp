@@ -1,0 +1,13 @@
+/Users/makariusiii/project_cpp/build/CMakeFiles/emotion_detector.dir
+/Users/makariusiii/project_cpp/build/CMakeFiles/test_image.dir
+/Users/makariusiii/project_cpp/build/CMakeFiles/test.dir
+/Users/makariusiii/project_cpp/build/CMakeFiles/edit_cache.dir
+/Users/makariusiii/project_cpp/build/CMakeFiles/rebuild_cache.dir
+/Users/makariusiii/project_cpp/build/_deps/catch2-build/CMakeFiles/test.dir
+/Users/makariusiii/project_cpp/build/_deps/catch2-build/CMakeFiles/edit_cache.dir
+/Users/makariusiii/project_cpp/build/_deps/catch2-build/CMakeFiles/rebuild_cache.dir
+/Users/makariusiii/project_cpp/build/_deps/catch2-build/src/CMakeFiles/Catch2.dir
+/Users/makariusiii/project_cpp/build/_deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir
+/Users/makariusiii/project_cpp/build/_deps/catch2-build/src/CMakeFiles/test.dir
+/Users/makariusiii/project_cpp/build/_deps/catch2-build/src/CMakeFiles/edit_cache.dir
+/Users/makariusiii/project_cpp/build/_deps/catch2-build/src/CMakeFiles/rebuild_cache.dir

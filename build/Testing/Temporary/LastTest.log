@@ -1,0 +1,22 @@
+Start testing: Jun 20 19:35 MSK
+----------------------------------------------------------
+1/1 Testing: OpencvTestsSuite
+1/1 Test: OpencvTestsSuite
+Command: "/Users/makariusiii/project_cpp/build/test_image"
+Directory: /Users/makariusiii/project_cpp/build
+"OpencvTestsSuite" start time: Jun 20 19:35 MSK
+Output:
+----------------------------------------------------------
+Randomness seeded to: 3500577280
+===============================================================================
+All tests passed (39 assertions in 6 test cases)
+
+<end of output>
+Test time =   1.51 sec
+----------------------------------------------------------
+Test Passed.
+"OpencvTestsSuite" end time: Jun 20 19:36 MSK
+"OpencvTestsSuite" time elapsed: 00:00:01
+----------------------------------------------------------
+
+End testing: Jun 20 19:36 MSK
