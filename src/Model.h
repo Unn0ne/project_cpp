@@ -33,6 +33,7 @@ public:
      * @return Вектор строк с предсказанными эмоциями и их вероятностями.
      */
     std::vector<std::string> predict(Image& image);
+<<<<<<< HEAD
 
     /**
      * @brief Функция предсказания модели, принимает изображение на вход и возвращает первую предсказанную эмоцию.
@@ -41,9 +42,17 @@ public:
      */
     std::string ans(Image& image);
 
+=======
+    std::string ans(Image& image);
+>>>>>>> refs/remotes/origin/main
 private:
     cv::dnn::Net network; ///< Нейронная сеть модели.
     std::map<int, std::string> classid_to_string; ///< Отображение ID класса в строковую метку.
 };
 
+<<<<<<< HEAD
 #endif
+=======
+
+#endif
+>>>>>>> refs/remotes/origin/main
