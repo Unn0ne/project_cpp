@@ -1,3 +1,4 @@
+
 /**
  * @file Model.cpp
  * @brief Реализация методов класса Model.
@@ -65,49 +66,6 @@ std::vector<std::string> Model::predict(Image& image) {
 
     return emotion_prediction;
 }
-std::string Model::ans(Image& image) {
-    // this takes the region of interest image and then runs model inference
-    std::vector<cv::Mat> roi_image = image.getModelInput();
-
-    std::vector<std::string> emotion_prediction;
-
-    if (roi_image.size() > 0) { 
-        for (int i=0; i < roi_image.size(); i++) {
-            // Convert to blob
-            cv::Mat blob = cv::dnn::blobFromImage(roi_image[i]);
-
-            // Pass blob to network
-            this->network.setInput(blob);
-
-            // Forward pass on network    
-            cv::Mat prob = this->network.forward();
-
-            // Sort the probabilities and rank the indicies
-            cv::Mat sorted_probabilities;
-            cv::Mat sorted_ids;
-            cv::sort(prob.reshape(1, 1), sorted_probabilities, cv::SORT_DESCENDING);
-            cv::sortIdx(prob.reshape(1, 1), sorted_ids, cv::SORT_DESCENDING);
-
-            // Get top probability and top class id
-            float top_probability = sorted_probabilities.at<float>(1);
-            int top_class_id = sorted_ids.at<int>(1);
-
-            // Map classId to the class name string (ie. happy, sad, angry, disgust etc.)
-            std::string class_name = this->classid_to_string.at(top_class_id);
-
-            // Prediction result string to print
-            std::string result_string = class_name + ": " + std::to_string(top_probability * 100) + "%";
-
-            // Put on end of result vector
-            emotion_prediction.push_back(result_string);
-
-        }
-    }
-
-    return emotion_prediction[0];
-
-}
-
 
 /**
  * @brief Выполняет предсказание эмоций на основе входного изображения и возвращает первую эмоцию.
@@ -143,7 +101,7 @@ std::string Model::ans(Image& image) {
             // Отображение ID класса на название класса (например, happy, sad, angry, disgust и т.д.)
             std::string class_name = this->classid_to_string.at(top_class_id);
 
-            // Строка с результатом предсказания для вывода
+// Строка с результатом предсказания для вывода
             std::string result_string = class_name + ": " + std::to_string(top_probability * 100) + "%";
 
             // Добавление результата в вектор предсказаний
